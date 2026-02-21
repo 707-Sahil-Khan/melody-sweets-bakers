@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+// 1. Add the import here
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -16,9 +18,11 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={inter.variable}>{children}</body>
+            <body className={inter.variable}>
+                {children}
+                {/* 2. Add the component inside the body */}
+                <Analytics />
+            </body>
         </html>
     );
 }
-
-
