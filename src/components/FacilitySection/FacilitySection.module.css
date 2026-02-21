@@ -1,0 +1,56 @@
+.flex {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+}
+
+.textSide {
+    flex: 1;
+}
+
+.title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.desc {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+.highlight {
+    font-weight: 700;
+    color: var(--power-red);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.9rem;
+}
+
+.imageSide {
+    flex: 1;
+}
+
+.imageWrapper {
+    width: 100%;
+    height: 400px;
+    background: #eee;
+    overflow: hidden;
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+    .flex {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .imageWrapper {
+        height: 300px;
+    }
+}

@@ -1,0 +1,67 @@
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background: #000;
+}
+
+.video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: 1;
+}
+
+.mainContent {
+    position: absolute;
+    bottom: 12%;
+    left: 5%;
+    z-index: 2;
+    max-width: 1440px;
+    width: 90%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.contentLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.title {
+    font-family: serif;
+    /* Ensure CG Times or similar is loaded */
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    line-height: 0.9;
+    color: #f3e9d7;
+    /* Your requested ivory color */
+    font-weight: 500;
+    margin: 0;
+}
+
+.descriptionCard {
+    max-width: 480px;
+}
+
+.descriptionCard p {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #f3e9d7;
+    line-height: 1.4;
+    margin: 0;
+}

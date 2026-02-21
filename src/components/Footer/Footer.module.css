@@ -1,0 +1,144 @@
+.footer {
+    background: #111111;
+    padding: 80px 0 40px;
+    color: var(--white);
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr 1.5fr;
+    gap: 60px;
+    margin-bottom: 60px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--power-red);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+}
+
+.desc {
+    font-size: 0.95rem;
+    color: #9ca3af;
+    line-height: 1.8;
+    max-width: 300px;
+}
+
+.title {
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 2rem;
+    letter-spacing: 0.05em;
+}
+
+.links {
+    list-style: none;
+}
+
+.links li {
+    margin-bottom: 1rem;
+}
+
+.links a {
+    color: #9ca3af;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.links a:hover {
+    color: var(--power-red);
+}
+
+.detail {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    color: #9ca3af;
+}
+
+.icon {
+    color: var(--power-red);
+    flex-shrink: 0;
+}
+
+.whatsappBtn {
+    background: #25d366;
+    color: white;
+    padding: 12px 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    width: fit-content;
+}
+
+.socials {
+    display: flex;
+    gap: 1.5rem;
+    color: #9ca3af;
+}
+
+.socials svg {
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.socials svg:hover {
+    color: var(--power-red);
+}
+
+.divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin-bottom: 30px;
+}
+
+.bottomFlex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #6b7280;
+}
+
+.credit {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .bottomFlex {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}

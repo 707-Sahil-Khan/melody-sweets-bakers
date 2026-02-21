@@ -1,0 +1,59 @@
+.heritage {
+    padding: 10rem 10%;
+    background: #000;
+    /* Matching your obsidian theme */
+}
+
+.header {
+    margin-bottom: 8rem;
+    text-align: center;
+}
+
+.label {
+    color: #d4af37;
+    /* Champagne Gold */
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+    font-size: 0.7rem;
+}
+
+.title {
+    font-size: 4rem;
+    color: #f3e9d7;
+    /* Ivory color */
+    margin-top: 1rem;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+}
+
+.event {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    position: relative;
+}
+
+.year {
+    font-family: serif;
+    font-size: 5rem;
+    color: rgba(243, 233, 215, 0.1);
+    /* Low opacity Ivory */
+    font-weight: 900;
+    min-width: 250px;
+}
+
+.content h3 {
+    color: #d4af37;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.content p {
+    color: #f3e9d7;
+    line-height: 1.8;
+    opacity: 0.8;
+}
