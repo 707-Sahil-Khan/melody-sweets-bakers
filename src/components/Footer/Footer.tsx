@@ -15,19 +15,19 @@ const SLIDES = [
     {
         id: 1,
         title: "Salads",
-        img: "/products/Salad.png", // Corrected casing to match your file
+        img: "/products/Salad.webp", // Changed to .webp
         tag: "Ready to Eat"
     },
     {
         id: 2,
         title: "Birthday personalised Cake",
-        img: "/products/Birthday.png",
+        img: "/products/Birthday.webp", // Changed to .webp
         tag: "Pastry & Sweets"
     },
     {
         id: 3,
         title: "Blueberry Cheese Cake",
-        img: "/products/Blueberry.png",
+        img: "/products/Blueberry.webp", // Changed to .webp
         tag: "Pastry & Sweets"
     },
 ];
@@ -41,11 +41,7 @@ export default function Footer() {
     return (
         <footer className={styles.footer}>
             <div className={styles.container}>
-
-                {/* TOP SECTION */}
                 <div className={styles.mainGrid}>
-
-                    {/* 1. Slider Card */}
                     <div className={styles.cardWrapper}>
                         <div className={styles.productCard}>
                             <div className={styles.cardHeader}>
@@ -80,7 +76,6 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    {/* 2. Navigation */}
                     <div className={styles.navLinks}>
                         <span className={styles.label}>Navigation</span>
                         <ul className={styles.giantLinks}>
@@ -91,7 +86,6 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* 3. Lists */}
                     <div className={styles.listGroups}>
                         <div className={styles.listCol}>
                             <span className={styles.label}>Categories</span>
@@ -108,7 +102,6 @@ export default function Footer() {
                     </div>
                 </div>
 
-                {/* BOTTOM SECTION */}
                 <div className={styles.bottomFlex}>
                     <div className={styles.newsletter}>
                         <span className={styles.label}>Newsletter</span>
@@ -131,7 +124,6 @@ export default function Footer() {
                             <a href="https://www.facebook.com/p/Melody-Sweets-and-Bakers-61579018833859/" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
                                 <Facebook size={18} />
                             </a>
-                            {/* Official TikTok SVG Path */}
                             <a href="https://www.tiktok.com/@melodybakerywah" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                     <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
