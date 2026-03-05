@@ -8,6 +8,8 @@ import ProductCatalog from "@/components/ProductCatalog/ProductCatalog";
 import FacilitySection from "@/components/FacilitySection/FacilitySection";
 import ContactSection from "@/components/ContactSection/ContactSection";
 import Footer from "@/components/Footer/Footer";
+import FeaturedProducts from "@/components/FeaturedProducts/FeaturedProducts";
+import PartnershipSection from "@/components/PartnershipSection/PartnershipSection";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -15,13 +17,23 @@ export default function Home() {
         <main className={styles.main}>
             <Navbar />
             <Hero />
-            <CategoryGrid />
-            <MovingShowcase />
-            <ProductCatalog />
-            <FacilitySection />
-            <ContactSection />
+
+            <div className={styles.contentSections}>
+                <CategoryGrid />
+                <MovingShowcase />
+
+                {/* --- Interactive Cards Section --- */}
+                <FeaturedProducts />
+
+                {/* --- Yellow Partnership Section (Added Here) --- */}
+                <PartnershipSection />
+
+                <ProductCatalog />
+                <FacilitySection />
+                <ContactSection />
+            </div>
+
             <Footer />
         </main>
     );
 }
-

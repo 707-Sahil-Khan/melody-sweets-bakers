@@ -1,0 +1,139 @@
+.container {
+    position: relative;
+    background-color: #f1b335;
+    /* The gold/yellow color */
+    padding: 80px 5%;
+    margin: 40px 20px;
+    border-radius: 40px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+}
+
+/* Replicating the exact Diamond Pattern from your screenshot */
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23000000' fill-opacity='0.04'%3E%3Cpath d='M40 0l40 40-40 40L0 40z'/%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+}
+
+.contentWrapper {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1300px;
+    /* Prevents it from stretching too wide and cutting off */
+    gap: 40px;
+}
+
+.leftSide {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    align-self: flex-start;
+    padding: 6px 16px;
+    border: 1px solid rgba(45, 34, 26, 0.2);
+    border-radius: 20px;
+    font-size: 0.75rem;
+    color: #2d221a;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.title {
+    font-family: 'Times New Roman', serif;
+    /* Or your preferred serif font */
+    font-size: clamp(2.5rem, 5vw, 4.2rem);
+    color: #2d221a;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.description {
+    max-width: 480px;
+    color: #2d221a;
+    opacity: 0.8;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.btnGroup {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.primaryBtn {
+    padding: 16px 32px;
+    background: #fff;
+    border: none;
+    border-radius: 35px;
+    font-weight: 700;
+    color: #2d221a;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.secondaryBtn {
+    padding: 16px 32px;
+    background: #2d221a;
+    border: none;
+    border-radius: 35px;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+}
+
+.rightSide {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.partnerList {
+    list-style: none;
+    text-align: right;
+}
+
+.partnerList li {
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-weight: 900;
+    color: #2d221a;
+    opacity: 0.1;
+    line-height: 0.9;
+    text-transform: lowercase;
+}
+
+.partnerList li.highlight {
+    opacity: 1;
+}
+
+@media (max-width: 1024px) {
+    .contentWrapper {
+        flex-direction: column;
+        text-align: left;
+        align-items: flex-start;
+    }
+
+    .rightSide {
+        display: none;
+        /* Hide the big text on small screens to prevent overlap */
+    }
+}

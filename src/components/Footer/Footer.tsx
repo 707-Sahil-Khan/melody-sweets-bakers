@@ -1,65 +1,151 @@
 "use client";
 
+import React, { useState } from "react";
+import Image from "next/image";
+import {
+    Instagram,
+    Linkedin,
+    Facebook,
+    ArrowRight,
+    ArrowLeft
+} from "lucide-react";
 import styles from "./Footer.module.css";
-import { MessageCircle, MapPin, Phone, Instagram, Facebook, Twitter } from "lucide-react";
+
+const SLIDES = [
+    {
+        id: 1,
+        title: "Salads",
+        img: "/products/Salad.png", // Corrected casing to match your file
+        tag: "Ready to Eat"
+    },
+    {
+        id: 2,
+        title: "Birthday personalised Cake",
+        img: "/products/Birthday.png",
+        tag: "Pastry & Sweets"
+    },
+    {
+        id: 3,
+        title: "Blueberry Cheese Cake",
+        img: "/products/Blueberry.png",
+        tag: "Pastry & Sweets"
+    },
+];
 
 export default function Footer() {
+    const [current, setCurrent] = useState(0);
+
+    const next = () => setCurrent((prev) => (prev === SLIDES.length - 1 ? 0 : prev + 1));
+    const prev = () => setCurrent((prev) => (prev === 0 ? SLIDES.length - 1 : prev - 1));
+
     return (
         <footer className={styles.footer}>
-            <div className="container">
-                <div className={styles.grid}>
-                    <div className={styles.column}>
-                        <h2 className={styles.logo}>MELODY</h2>
-                        <p className={styles.desc}>
-                            Quality You Can Trust. Establishing excellence in Wah Cantt with a heritage of purity and traditional taste.
-                        </p>
+            <div className={styles.container}>
+
+                {/* TOP SECTION */}
+                <div className={styles.mainGrid}>
+
+                    {/* 1. Slider Card */}
+                    <div className={styles.cardWrapper}>
+                        <div className={styles.productCard}>
+                            <div className={styles.cardHeader}>
+                                <span className={styles.badge}>{SLIDES[current].tag}</span>
+                                <div className={styles.dots}>
+                                    {SLIDES.map((_, i) => (
+                                        <span key={i} className={i === current ? styles.activeDot : styles.dot} />
+                                    ))}
+                                </div>
+                            </div>
+
+                            <div className={styles.sliderBody}>
+                                <button onClick={prev} className={styles.navBtn} aria-label="Previous product">
+                                    <ArrowLeft size={18} />
+                                </button>
+                                <div className={styles.imgContainer}>
+                                    <Image
+                                        src={SLIDES[current].img}
+                                        alt={SLIDES[current].title}
+                                        width={150}
+                                        height={150}
+                                        className={styles.productImg}
+                                        key={current}
+                                        priority
+                                    />
+                                </div>
+                                <button onClick={next} className={styles.navBtn} aria-label="Next product">
+                                    <ArrowRight size={18} />
+                                </button>
+                            </div>
+                            <h3 className={styles.cardTitle}>{SLIDES[current].title}</h3>
+                        </div>
                     </div>
 
-                    <div className={styles.column}>
-                        <h3 className={styles.title}>Products</h3>
-                        <ul className={styles.links}>
-                            <li><a href="#products">Artisan Cakes</a></li>
-                            <li><a href="#products">Traditional Mithai</a></li>
-                            <li><a href="#products">Fresh Bakery</a></li>
-                            <li><a href="#products">Savory Delights</a></li>
+                    {/* 2. Navigation */}
+                    <div className={styles.navLinks}>
+                        <span className={styles.label}>Navigation</span>
+                        <ul className={styles.giantLinks}>
+                            <li>Solutions</li>
+                            <li className={styles.activeLink}>Products</li>
+                            <li>Recipes</li>
+                            <li>Contact</li>
                         </ul>
                     </div>
 
-                    <div className={styles.column}>
-                        <h3 className={styles.title}>Location</h3>
-                        <div className={styles.detail}>
-                            <MapPin size={16} className={styles.icon} />
-                            <p>Main Market, Wah Cantt,<br />Punjab, Pakistan</p>
+                    {/* 3. Lists */}
+                    <div className={styles.listGroups}>
+                        <div className={styles.listCol}>
+                            <span className={styles.label}>Categories</span>
+                            <ul className={styles.smallLinks}>
+                                <li>Bread</li><li>Confectionery</li><li>Healthy</li><li>Pastry & Sweets</li><li>Ready to Eat</li>
+                            </ul>
                         </div>
-                        <div className={styles.detail}>
-                            <Phone size={16} className={styles.icon} />
-                            <p>+92 (51) 453XXXX</p>
-                        </div>
-                    </div>
-
-                    <div className={styles.column}>
-                        <h3 className={styles.title}>Customer Support</h3>
-                        <a href="https://wa.me/923000000000" className={styles.whatsappBtn}>
-                            <MessageCircle size={20} />
-                            <span>WhatsApp Chat</span>
-                        </a>
-                        <div className={styles.socials}>
-                            <Instagram size={20} />
-                            <Facebook size={20} />
-                            <Twitter size={20} />
+                        <div className={styles.listCol}>
+                            <span className={styles.label}>About us</span>
+                            <ul className={styles.smallLinks}>
+                                <li>Our story</li><li>Certifications</li><li>Facilities</li><li>Careers</li><li>Sustainability</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
 
-                <div className={styles.bottom}>
-                    <div className={styles.divider} />
-                    <div className={styles.bottomFlex}>
-                        <p>© 2026 Melody Sweets & Bakers. All rights reserved.</p>
-                        <p className={styles.credit}>Wah Cantt Heritage</p>
+                {/* BOTTOM SECTION */}
+                <div className={styles.bottomFlex}>
+                    <div className={styles.newsletter}>
+                        <span className={styles.label}>Newsletter</span>
+                        <h2 className={styles.newsTitle}>Get our fresh Bakery updates</h2>
+                        <div className={styles.inputRow}>
+                            <input type="email" placeholder="Enter your email address" className={styles.input} />
+                            <button className={styles.btn}>Sign up <ArrowRight size={16} /></button>
+                        </div>
                     </div>
+
+                    <div className={styles.socials}>
+                        <span className={styles.label}>Follow us</span>
+                        <div className={styles.icons}>
+                            <a href="https://www.instagram.com/melodysweetspkofficial/" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
+                                <Instagram size={18} />
+                            </a>
+                            <a href="https://linkedin.com/in/melody-sweets-and-bakers-2954b7384?originalSubdomain=pk" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
+                                <Linkedin size={18} />
+                            </a>
+                            <a href="https://www.facebook.com/p/Melody-Sweets-and-Bakers-61579018833859/" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
+                                <Facebook size={18} />
+                            </a>
+                            {/* Official TikTok SVG Path */}
+                            <a href="https://www.tiktok.com/@melodybakerywah" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div className={styles.footerFinisher}>
+                    <p>© 2026 Melody Sweets & Bakers — Wah Cantt Heritage</p>
+                    <a href="#">Privacy Policy</a>
                 </div>
             </div>
         </footer>
     );
 }
-

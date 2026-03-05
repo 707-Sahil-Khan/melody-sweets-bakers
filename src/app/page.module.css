@@ -1,5 +1,6 @@
 .main {
-    background: var(--obsidian);
+    /* Use the light ivory theme as the base background */
+    background: #f3e9d7;
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
@@ -8,4 +9,11 @@
 .contentSections {
     position: relative;
     z-index: 5;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Optional: Ensures each section occupies its full width */
+.contentSections>* {
+    width: 100%;
 }
