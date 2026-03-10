@@ -1,53 +1,73 @@
+/* FeaturedProducts.module.css */
+
 .container {
     position: relative;
     background-color: #f3e9d7;
-    padding: 120px 8%;
-    min-height: 90vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
     overflow: hidden;
 }
 
 .bgText {
     position: absolute;
-    top: 14%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 22vw;
+    font-size: 23vw;
     font-weight: 900;
-    color: rgba(58, 43, 31, 0.04);
+    color: rgba(58, 43, 31, 0.07);
     margin: 0;
     pointer-events: none;
     z-index: 0;
+    white-space: nowrap;
+    letter-spacing: -0.02em;
+    user-select: none;
 }
 
-.contentWrapper {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    width: 100%;
-    align-items: center;
+/* ── LEFT ── */
+.leftInfo {
+    flex: 0 0 240px;
     z-index: 2;
-    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-bottom: 60px;
+}
+
+.counter {
+    font-size: 0.95rem;
+    color: #9e8872;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    margin: 0;
 }
 
 .productTitle {
-    font-family: serif;
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    color: #4a3728;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(2rem, 3vw, 3rem);
+    color: #3a2b1f;
     line-height: 1.1;
-    margin: 1.5rem 0;
+    margin: 0;
+    font-weight: 800;
 }
 
-.description {
-    max-width: 400px;
-    color: #6d5b4b;
-    font-size: 1.1rem;
-    line-height: 1.6;
+/* ── CENTER ── */
+.centerWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    z-index: 2;
+    flex-shrink: 0;
 }
 
 .cardStack {
     position: relative;
-    height: 500px;
+    width: 320px;
+    height: 520px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,57 +75,61 @@
 
 .card {
     position: absolute;
-    width: 340px;
-    height: 460px;
-    /* BACK TO ORIGINAL TAN */
-    background: #e9decb;
-    border-radius: 24px;
-    padding: 30px;
-    box-shadow: 0 25px 50px rgba(74, 55, 40, 0.12);
+    width: 290px;
+    height: 480px;
+    border-radius: 28px;
+    padding: 24px 20px 20px;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     overflow: hidden;
+    transform-origin: bottom center;
+    will-change: transform, background;
+    /* Default — overridden per card by JS */
+    background: #ede3cf;
+    box-shadow: 0 12px 50px rgba(100, 75, 50, 0.15);
 }
 
 .tag {
-    align-self: flex-start;
-    padding: 6px 16px;
-    border: 1px solid #4a3728;
+    padding: 5px 16px;
+    border: 1.5px solid rgba(74, 55, 40, 0.45);
     border-radius: 20px;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: #4a3728;
     font-weight: 600;
-    z-index: 5;
+    background: transparent;
+    flex-shrink: 0;
+    z-index: 2;
 }
 
-/* --- IMAGE HANDLING --- */
-
+/* ── IMAGES ── */
 .imageContainer {
     position: relative;
     flex: 1;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 12px;
 }
 
 .mainImg,
 .hoverImg {
     position: absolute;
     object-fit: contain;
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    /* Shadow for PNGs */
-    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.2));
+    transition: all 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Removes black backgrounds from PNGs */
+    mix-blend-mode: multiply;
 }
 
 .hoverImg {
     opacity: 0;
-    transform: scale(0.8) translateY(30px);
+    transform: scale(0.85) translateY(20px);
 }
 
 .card:hover .mainImg {
     opacity: 0;
-    transform: scale(1.1) rotate(-10deg);
+    transform: scale(1.08) rotate(-8deg);
 }
 
 .card:hover .hoverImg {
@@ -113,24 +137,62 @@
     transform: scale(1) translateY(0);
 }
 
-/* --- NAVIGATION --- */
+/* ── DISCOVER BUTTON ── */
+.discoverBtn {
+    padding: 15px 40px;
+    background: #c8860a;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease;
+    font-family: inherit;
+    white-space: nowrap;
+    box-shadow: 0 4px 20px rgba(200, 134, 10, 0.3);
+}
+
+.discoverBtn:hover {
+    background: #a96e08;
+    transform: translateY(-2px);
+}
+
+/* ── RIGHT ── */
+.rightInfo {
+    flex: 0 0 240px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: flex-start;
+    padding-bottom: 60px;
+}
+
+.description {
+    color: #5a4535;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0;
+    max-width: 240px;
+    font-weight: 500;
+}
 
 .navigation {
-    margin-top: 3rem;
     display: flex;
-    gap: 15px;
+    gap: 12px;
 }
 
 .navBtn {
-    width: 55px;
-    height: 55px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    border: 1px solid #d4c1a8;
-    background: #fffefb;
+    border: 1.5px solid #c9b89a;
+    background: rgba(255, 255, 255, 0.5);
     color: #4a3728;
     cursor: pointer;
-    font-size: 1.3rem;
-    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    transition: all 0.25s ease;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -139,24 +201,30 @@
 .navBtn:hover {
     background: #4a3728;
     color: #f3e9d7;
-    transform: translateY(-3px);
+    border-color: #4a3728;
+    transform: translateY(-2px);
 }
 
-@media (max-width: 1024px) {
-    .contentWrapper {
-        grid-template-columns: 1fr;
+/* ── RESPONSIVE ── */
+@media (max-width: 1100px) {
+    .container {
+        flex-direction: column;
+        padding: 80px 6%;
+        min-height: auto;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .leftInfo,
+    .rightInfo {
+        flex: none;
+        width: 100%;
+        align-items: center;
         text-align: center;
+        padding-bottom: 0;
     }
 
     .description {
-        margin: 0 auto;
-    }
-
-    .navigation {
-        justify-content: center;
-    }
-
-    .cardStack {
-        margin-top: 3rem;
+        max-width: 400px;
     }
 }

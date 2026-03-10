@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
     Instagram,
     Linkedin,
@@ -15,19 +16,19 @@ const SLIDES = [
     {
         id: 1,
         title: "Salads",
-        img: "/products/Salad.webp", // Changed to .webp
+        img: "/products/Salad.webp",
         tag: "Ready to Eat"
     },
     {
         id: 2,
         title: "Birthday personalised Cake",
-        img: "/products/Birthday.webp", // Changed to .webp
+        img: "/products/Birthday.webp",
         tag: "Pastry & Sweets"
     },
     {
         id: 3,
         title: "Blueberry Cheese Cake",
-        img: "/products/Blueberry.webp", // Changed to .webp
+        img: "/products/Blueberry.webp",
         tag: "Pastry & Sweets"
     },
 ];
@@ -90,13 +91,21 @@ export default function Footer() {
                         <div className={styles.listCol}>
                             <span className={styles.label}>Categories</span>
                             <ul className={styles.smallLinks}>
-                                <li>Bread</li><li>Confectionery</li><li>Healthy</li><li>Pastry & Sweets</li><li>Ready to Eat</li>
+                                <li>Bread</li>
+                                <li>Confectionery</li>
+                                <li>Healthy</li>
+                                <li>Pastry &amp; Sweets</li>
+                                <li>Ready to Eat</li>
                             </ul>
                         </div>
                         <div className={styles.listCol}>
                             <span className={styles.label}>About us</span>
                             <ul className={styles.smallLinks}>
-                                <li>Our story</li><li>Certifications</li><li>Facilities</li><li>Careers</li><li>Sustainability</li>
+                                <li>Our story</li>
+                                <li>Certifications</li>
+                                <li>Facilities</li>
+                                <li>Careers</li>
+                                <li>Sustainability</li>
                             </ul>
                         </div>
                     </div>
@@ -134,8 +143,8 @@ export default function Footer() {
                 </div>
 
                 <div className={styles.footerFinisher}>
-                    <p>© 2026 Melody Sweets & Bakers — Wah Cantt Heritage</p>
-                    <a href="#">Privacy Policy</a>
+                    <p>© 2026 Melody Sweets &amp; Bakers — Wah Cantt Heritage</p>
+                    <Link href="/privacy">Privacy Policy</Link>
                 </div>
             </div>
         </footer>

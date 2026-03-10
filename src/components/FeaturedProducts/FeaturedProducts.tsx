@@ -40,6 +40,13 @@ const PRODUCTS = [
     }
 ];
 
+// All beige shades — active is lightest, back cards get slightly darker
+const CARD_COLORS = [
+    '#ddd0b8', // 1 behind
+    '#cfc2a8', // 2 behind
+    '#c2b598', // 3 behind
+];
+
 export default function FeaturedProducts() {
     const [activeIndex, setActiveIndex] = useState(0);
     const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -50,36 +57,50 @@ export default function FeaturedProducts() {
     useEffect(() => {
         cardsRef.current.forEach((card, i) => {
             if (!card) return;
-            const isSelected = i === activeIndex;
+
+            const total = PRODUCTS.length;
+            let offset = i - activeIndex;
+            if (offset > total / 2) offset -= total;
+            if (offset < -total / 2) offset += total;
+
+            const absOffset = Math.abs(offset);
+            const isActive = offset === 0;
+
+            // Set card color — active = warm beige, back = progressively darker beige
+            if (isActive) {
+                card.style.background = '#ede3cf';
+            } else {
+                const colorIndex = Math.min(absOffset - 1, CARD_COLORS.length - 1);
+                card.style.background = CARD_COLORS[colorIndex];
+            }
 
             gsap.to(card, {
-                x: isSelected ? 0 : (i < activeIndex ? -120 : 60),
-                rotation: isSelected ? 0 : (i - activeIndex) * 12,
-                opacity: isSelected ? 1 : 0.4,
-                scale: isSelected ? 1 : 0.8,
-                duration: 0.8,
-                ease: "power2.out",
-                zIndex: isSelected ? 10 : 1,
+                x: offset * 85,
+                rotation: offset * 9,
+                scale: isActive ? 1 : Math.max(0.82, 1 - absOffset * 0.09),
+                opacity: absOffset > 2 ? 0 : 1,
+                zIndex: PRODUCTS.length - absOffset,
+                duration: 0.65,
+                ease: "power3.out",
             });
         });
     }, [activeIndex]);
+
+    const current = PRODUCTS[activeIndex];
+    const counter = `${String(activeIndex + 1).padStart(2, '0')} / ${String(PRODUCTS.length).padStart(2, '0')}`;
 
     return (
         <section className={styles.container}>
             <h2 className={styles.bgText}>Featured</h2>
 
-            <div className={styles.contentWrapper}>
-                <div className={styles.infoSide}>
-                    <span className={styles.sectionLabel}>Melody Bakery</span>
-                    <h3 className={styles.productTitle}>{PRODUCTS[activeIndex].name}</h3>
-                    <p className={styles.description}>{PRODUCTS[activeIndex].desc}</p>
+            {/* Left */}
+            <div className={styles.leftInfo}>
+                <p className={styles.counter}>{counter}</p>
+                <h3 className={styles.productTitle}>{current.name}</h3>
+            </div>
 
-                    <div className={styles.navigation}>
-                        <button className={styles.navBtn} onClick={handlePrev}>←</button>
-                        <button className={styles.navBtn} onClick={handleNext}>→</button>
-                    </div>
-                </div>
-
+            {/* Center */}
+            <div className={styles.centerWrapper}>
                 <div className={styles.cardStack}>
                     {PRODUCTS.map((product, i) => (
                         <div
@@ -92,20 +113,33 @@ export default function FeaturedProducts() {
                                 <Image
                                     src={product.image}
                                     alt={product.name}
-                                    width={300}
+                                    width={260}
                                     height={300}
                                     className={styles.mainImg}
                                 />
                                 <Image
                                     src={product.hoverImage}
                                     alt="Packaging"
-                                    width={300}
+                                    width={260}
                                     height={300}
                                     className={styles.hoverImg}
                                 />
                             </div>
                         </div>
                     ))}
+                </div>
+
+                <button className={styles.discoverBtn}>
+                    Discover product →
+                </button>
+            </div>
+
+            {/* Right */}
+            <div className={styles.rightInfo}>
+                <p className={styles.description}>{current.desc}</p>
+                <div className={styles.navigation}>
+                    <button className={styles.navBtn} onClick={handlePrev}>←</button>
+                    <button className={styles.navBtn} onClick={handleNext}>→</button>
                 </div>
             </div>
         </section>

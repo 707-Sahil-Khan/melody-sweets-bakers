@@ -1,0 +1,127 @@
+/* PrivacyPolicy.module.css */
+
+.page {
+    background-color: #f3e9d7;
+    min-height: 100vh;
+    padding: 80px 0 120px;
+    font-family: inherit;
+}
+
+.container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+/* ── HEADER ── */
+.header {
+    margin-bottom: 64px;
+    padding-bottom: 48px;
+    border-bottom: 1.5px solid rgba(74, 55, 40, 0.15);
+}
+
+.updated {
+    font-size: 0.85rem;
+    color: #9e8872;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    margin: 0 0 16px 0;
+    text-transform: uppercase;
+}
+
+.title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: #2c1a0e;
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0 0 28px 0;
+    letter-spacing: -0.02em;
+}
+
+.intro {
+    font-size: 1.1rem;
+    color: #5a4535;
+    line-height: 1.75;
+    margin: 0;
+    max-width: 680px;
+}
+
+/* ── BODY SECTIONS ── */
+.body {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.sectionTitle {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.3rem;
+    color: #2c1a0e;
+    font-weight: 700;
+    margin: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(74, 55, 40, 0.1);
+}
+
+.section p {
+    font-size: 1rem;
+    color: #5a4535;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* ── CONTACT BOX ── */
+.contactBox {
+    background: #ede3cf;
+    border-radius: 14px;
+    padding: 24px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.contactBox p {
+    font-size: 0.98rem !important;
+    color: #3a2b1f !important;
+    margin: 0 !important;
+}
+
+.link {
+    color: #c8860a;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.link:hover {
+    color: #a96e08;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+    .page {
+        padding: 48px 0 80px;
+    }
+
+    .container {
+        padding: 0 20px;
+    }
+
+    .header {
+        margin-bottom: 40px;
+        padding-bottom: 32px;
+    }
+
+    .body {
+        gap: 36px;
+    }
+}
