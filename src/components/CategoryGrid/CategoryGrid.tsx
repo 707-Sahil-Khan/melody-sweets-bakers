@@ -1,42 +1,58 @@
 "use client";
 
+import Link from "next/link";
 import styles from "./CategoryGrid.module.css";
 import { Candy, Cake, Wheat, Croissant } from "lucide-react";
 
 const CATEGORIES = [
     {
         title: "Traditional Sweets",
-        icon: <Candy size={40} />,
-        href: "#heritage"
+        desc: "Mithai, halwa & desi favourites",
+        icon: <Candy size={44} />,
+        href: "/products/traditional-sweets",
+        count: "12 products"
     },
     {
         title: "Artisan Cakes",
-        icon: <Cake size={40} />,
-        href: "#products"
+        desc: "Celebration & everyday cakes",
+        icon: <Cake size={44} />,
+        href: "/products/artisan-cakes",
+        count: "8 products"
     },
     {
         title: "Fresh Bakery",
-        icon: <Wheat size={40} />,
-        href: "#products"
+        desc: "Breads, buns & daily bakes",
+        icon: <Wheat size={44} />,
+        href: "/products/fresh-bakery",
+        count: "10 products"
     },
     {
         title: "Savory Delights",
-        icon: <Croissant size={40} />,
-        href: "#products"
+        desc: "Biscuits, bakarkhani & more",
+        icon: <Croissant size={44} />,
+        href: "/products/savory-delights",
+        count: "6 products"
     }
 ];
 
 export default function CategoryGrid() {
     return (
-        <section className="section-white">
-            <div className="container">
+        <section className={styles.section}>
+            <div className={styles.inner}>
+                <div className={styles.header}>
+                    <span className={styles.eyebrow}>What we make</span>
+                    <h2 className={styles.heading}>Our Categories</h2>
+                </div>
                 <div className={styles.grid}>
                     {CATEGORIES.map((cat, idx) => (
-                        <div key={idx} className={styles.tile}>
+                        <Link key={idx} href={cat.href} className={styles.tile}>
                             <div className={styles.iconWrapper}>{cat.icon}</div>
-                            <h3 className={styles.title}>{cat.title}</h3>
-                            <a href={cat.href} className={styles.btn}>EXPLORE</a>
-                        </div>
+                            <div className={styles.tileBody}>
+                                <h3 className={styles.title}>{cat.title}</h3>
+                                <p className={styles.desc}>{cat.desc}</p>
+                            </div>
+                            <span className={styles.btn}>Explore →</span>
+                        </Link>
                     ))}
                 </div>
             </div>

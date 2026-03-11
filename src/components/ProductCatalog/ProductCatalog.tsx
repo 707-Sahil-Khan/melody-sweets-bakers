@@ -56,7 +56,7 @@ export default function ProductCatalog() {
                                         <span className={styles.tag}>{item.tag}</span>
                                     </div>
                                     <a
-                                        href={`https://wa.me/923000000000?text=Hi Melody, I want to order your ${item.name}`}
+                                        href={`https://wa.me/923001590951?text=Hi Melody, I want to order your ${item.name}`}
                                         target="_blank"
                                         className={styles.orderBtn}
                                     >
