@@ -4,12 +4,12 @@ import styles from "./FacilitySection.module.css";
 
 export default function FacilitySection() {
     return (
-        <section id="heritage" className="section-gray">
-            <div className="container">
+        <section id="heritage" className={styles.section}>
+            <div className={styles.inner}>
                 <div className={styles.flex}>
                     <div className={styles.textSide}>
+                        <span className={styles.eyebrow}>Our Facility</span>
                         <h2 className={styles.title}>The Wah Cantt Facility</h2>
-                        <div className="divider" />
                         <p className={styles.desc}>
                             Our production facility in the heart of Wah Cantt's Main Market is a testament to quality and scale. We combine traditional recipes with modern industrial standards to ensure every batch of sweets and bakery items is fresh, hygienic, and authentic.
                         </p>
@@ -20,7 +20,7 @@ export default function FacilitySection() {
                     <div className={styles.imageSide}>
                         <div className={styles.imageWrapper}>
                             <img
-                                src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800"
+                                src="/products/wahcantt.webp"
                                 alt="Melody Facility"
                                 className={styles.img}
                             />

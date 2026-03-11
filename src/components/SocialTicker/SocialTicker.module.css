@@ -1,6 +1,6 @@
 .tickerContainer {
     width: 100%;
-    background: var(--crimson-ribbon);
+    background: #2c1a0e;
     overflow: hidden;
     padding: 1.2rem 0;
     white-space: nowrap;
@@ -13,12 +13,11 @@
 }
 
 .tickerText {
-    font-family: var(--font-inter);
     font-size: 0.85rem;
     font-weight: 500;
-    color: var(--antique-cream);
-    letter-spacing: 0.25rem;
+    color: #f3e9d7;
+    letter-spacing: 0.2rem;
     padding-right: 2rem;
     text-transform: uppercase;
-    opacity: 0.9;
+    opacity: 0.85;
 }

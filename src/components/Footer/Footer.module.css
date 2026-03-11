@@ -10,11 +10,11 @@
     border-radius: 25px;
     max-width: 1440px;
     margin: 0 auto;
-    padding: 40px 60px 20px;
+    padding: 40px 40px 20px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
 }
 
-/* TOP SECTION: Horizontal Flex Layout */
+/* TOP SECTION */
 .mainGrid {
     display: flex;
     justify-content: space-between;
@@ -25,13 +25,16 @@
 }
 
 /* 1. SLIDER CARD */
+.cardWrapper {
+    flex-shrink: 0;
+}
+
 .productCard {
     background-color: #ede2cf;
     border-radius: 20px;
     padding: 20px 25px;
-    width: 340px;
+    width: 280px;
     height: 280px;
-    /* Locked height to prevent vertical stretching */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -90,6 +93,7 @@
     align-items: center;
     justify-content: center;
     transition: all 0.2s ease;
+    flex-shrink: 0;
 }
 
 .navBtn:hover {
@@ -102,6 +106,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex: 1;
 }
 
 .productImg {
@@ -122,7 +127,7 @@
 }
 
 .cardTitle {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: #3e2b1c;
     margin: 0;
@@ -131,7 +136,7 @@
 /* 2. GIANT NAVIGATION */
 .navLinks {
     flex: 1;
-    max-width: 400px;
+    min-width: 0;
 }
 
 .label {
@@ -144,6 +149,7 @@
     letter-spacing: 0.5px;
     margin-bottom: 15px;
     display: inline-block;
+    white-space: nowrap;
 }
 
 .giantLinks {
@@ -153,7 +159,7 @@
 }
 
 .giantLinks li {
-    font-size: 3rem;
+    font-size: clamp(1.5rem, 3vw, 3rem);
     font-weight: 800;
     color: #3e2b1c;
     cursor: pointer;
@@ -173,7 +179,8 @@
 /* 3. SMALL LINKS */
 .listGroups {
     display: flex;
-    gap: 50px;
+    gap: 40px;
+    flex-shrink: 0;
 }
 
 .smallLinks {
@@ -189,22 +196,24 @@
     margin-bottom: 8px;
     cursor: pointer;
     transition: color 0.2s ease;
+    white-space: nowrap;
 }
 
 .smallLinks li:hover {
     color: #cf7132;
 }
 
-/* BOTTOM SECTION: Newsletter & Socials */
+/* BOTTOM SECTION */
 .bottomFlex {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     padding: 40px 0 20px;
+    gap: 40px;
 }
 
 .newsTitle {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 800;
     margin: 10px 0 20px;
     color: #3e2b1c;
@@ -213,6 +222,7 @@
 .inputRow {
     display: flex;
     gap: 12px;
+    flex-wrap: wrap;
 }
 
 .input {
@@ -220,7 +230,8 @@
     border: none;
     padding: 14px 20px;
     border-radius: 12px;
-    width: 320px;
+    width: 260px;
+    max-width: 100%;
     outline: none;
     font-size: 0.95rem;
 }
@@ -237,6 +248,7 @@
     align-items: center;
     gap: 8px;
     transition: background 0.2s;
+    white-space: nowrap;
 }
 
 .btn:hover {
@@ -247,6 +259,7 @@
 .icons {
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 .socialIcon {
@@ -260,7 +273,6 @@
     color: #4a3728;
     transition: all 0.3s ease;
     text-decoration: none;
-    /* Crucial for external links */
 }
 
 .socialIcon:hover {
@@ -272,6 +284,8 @@
 .footerFinisher {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
     font-size: 0.8rem;
     color: #999;
     padding-top: 20px;
@@ -283,20 +297,64 @@
     color: inherit;
 }
 
-/* RESPONSIVE */
-@media (max-width: 1100px) {
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+    .mainGrid {
+        flex-wrap: wrap;
+    }
+
+    .listGroups {
+        gap: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 24px 20px 16px;
+        border-radius: 16px;
+    }
+
     .mainGrid {
         flex-direction: column;
-        gap: 40px;
+        gap: 32px;
+    }
+
+    .productCard {
+        width: 100%;
+        height: auto;
+        min-height: 240px;
+    }
+
+    .navLinks {
+        width: 100%;
+    }
+
+    .listGroups {
+        width: 100%;
+        justify-content: space-between;
     }
 
     .bottomFlex {
         flex-direction: column;
         align-items: flex-start;
-        gap: 40px;
+        gap: 32px;
     }
 
     .input {
         width: 100%;
+    }
+
+    .inputRow {
+        width: 100%;
+    }
+
+    .btn {
+        padding: 14px 20px;
+    }
+
+    .footerFinisher {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
     }
 }

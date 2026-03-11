@@ -1,5 +1,4 @@
 /* ContactSection.module.css */
-/* Matches the warm beige/brown bakery aesthetic from reference */
 
 .contactSection {
     display: flex;
@@ -7,15 +6,17 @@
     min-height: 100vh;
     background-color: #f0e8d5;
     font-family: inherit;
-    padding: 60px 80px;
+    padding: 80px 80px;
     gap: 80px;
     align-items: flex-start;
+    max-width: 1400px;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
 /* ── LEFT PANEL ── */
 .leftPanel {
     flex: 1;
-    max-width: 480px;
     padding-top: 20px;
 }
 
@@ -29,10 +30,9 @@
 }
 
 .subtext {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     color: #3b2410;
     line-height: 1.65;
-    max-width: 420px;
     margin: 0 0 48px 0;
     font-weight: 400;
 }
@@ -42,7 +42,7 @@
 }
 
 .blockTitle {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: #2c1a0e;
     margin: 0 0 16px 0;
@@ -54,6 +54,7 @@
     gap: 12px;
     margin-bottom: 10px;
     font-size: 0.95rem;
+    flex-wrap: wrap;
 }
 
 .label {
@@ -68,6 +69,7 @@
     text-underline-offset: 3px;
     font-weight: 500;
     transition: color 0.2s ease;
+    word-break: break-all;
 }
 
 .link:hover {
@@ -106,12 +108,10 @@
 /* ── RIGHT PANEL ── */
 .rightPanel {
     flex: 1;
-    max-width: 540px;
-    background-color: transparent;
 }
 
 .formHeading {
-    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-size: clamp(1.6rem, 3vw, 2.8rem);
     font-weight: 700;
     color: #2c1a0e;
     margin: 0 0 36px 0;
@@ -202,7 +202,6 @@
     transform: translateX(2px);
 }
 
-/* Success message */
 .successMsg {
     background-color: #e8dcc8;
     border: 1.5px solid #c8860a;
@@ -214,16 +213,54 @@
     font-weight: 600;
 }
 
+.errorMsg {
+    color: #c0392b;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
 /* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+    .contactSection {
+        padding: 60px 48px;
+        gap: 60px;
+    }
+}
+
 @media (max-width: 900px) {
     .contactSection {
         flex-direction: column;
-        padding: 40px 24px;
+        padding: 48px 24px;
         gap: 48px;
+        min-height: auto;
     }
 
-    .leftPanel,
-    .rightPanel {
-        max-width: 100%;
+    .subtext {
+        margin-bottom: 32px;
+    }
+
+    .contactRow {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .label {
+        min-width: unset;
+    }
+
+    .partnerBtn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .submitBtn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .contactSection {
+        padding: 32px 16px;
     }
 }

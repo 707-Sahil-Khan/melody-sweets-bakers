@@ -1,9 +1,8 @@
 .container {
     position: relative;
     background-color: #f1b335;
-    /* The gold/yellow color */
-    padding: 80px 5%;
-    margin: 40px 20px;
+    padding: 80px 60px;
+    margin: 0 48px 40px;
     border-radius: 40px;
     overflow: hidden;
     display: flex;
@@ -12,7 +11,7 @@
     min-height: 500px;
 }
 
-/* Replicating the exact Diamond Pattern from your screenshot */
+/* Diamond Pattern */
 .container::before {
     content: '';
     position: absolute;
@@ -33,7 +32,6 @@
     align-items: center;
     width: 100%;
     max-width: 1300px;
-    /* Prevents it from stretching too wide and cutting off */
     gap: 40px;
 }
 
@@ -41,6 +39,7 @@
     flex: 1.2;
     display: flex;
     flex-direction: column;
+    min-width: 0;
 }
 
 .label {
@@ -57,7 +56,6 @@
 
 .title {
     font-family: 'Times New Roman', serif;
-    /* Or your preferred serif font */
     font-size: clamp(2.5rem, 5vw, 4.2rem);
     color: #2d221a;
     line-height: 1.1;
@@ -105,15 +103,20 @@
     flex: 1;
     display: flex;
     justify-content: flex-end;
+    overflow: hidden;
+    min-width: 0;
+    padding-right: 20px;
 }
 
 .partnerList {
     list-style: none;
     text-align: right;
+    padding: 0;
+    margin: 0;
 }
 
 .partnerList li {
-    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-size: clamp(2rem, 3.5vw, 3.5rem);
     font-weight: 900;
     color: #2d221a;
     opacity: 0.1;
@@ -125,7 +128,13 @@
     opacity: 1;
 }
 
+/* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
+    .container {
+        margin: 0 24px 32px;
+        padding: 60px 40px;
+    }
+
     .contentWrapper {
         flex-direction: column;
         text-align: left;
@@ -134,6 +143,24 @@
 
     .rightSide {
         display: none;
-        /* Hide the big text on small screens to prevent overlap */
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 0 16px 24px;
+        padding: 50px 28px;
+        border-radius: 24px;
+        min-height: auto;
+    }
+
+    .btnGroup {
+        flex-direction: column;
+    }
+
+    .primaryBtn,
+    .secondaryBtn {
+        width: 100%;
+        text-align: center;
     }
 }

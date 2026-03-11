@@ -1,53 +1,99 @@
+/* FacilitySection.module.css */
+
+.section {
+    background-color: #f3e9d7;
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+.inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 48px;
+}
+
 .flex {
     display: flex;
     align-items: center;
-    gap: 100px;
+    gap: 80px;
 }
 
 .textSide {
     flex: 1;
+    min-width: 0;
+}
+
+.eyebrow {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #c8860a;
+    margin-bottom: 14px;
 }
 
 .title {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 800;
+    color: #2c1a0e;
+    margin: 0 0 1.5rem 0;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
 }
 
 .desc {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
+    color: #7a5c3a;
     margin-bottom: 2rem;
-    max-width: 600px;
+    line-height: 1.75;
 }
 
 .highlight {
     font-weight: 700;
-    color: var(--power-red);
+    color: #c8860a;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-size: 0.9rem;
+    letter-spacing: 0.12em;
+    font-size: 0.85rem;
 }
 
 .imageSide {
     flex: 1;
+    min-width: 0;
 }
 
 .imageWrapper {
     width: 100%;
-    height: 400px;
-    background: #eee;
+    height: 420px;
+    border-radius: 24px;
     overflow: hidden;
+    box-shadow: 0 20px 60px rgba(74, 55, 40, 0.15);
 }
 
 .img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.imageWrapper:hover .img {
+    transform: scale(1.03);
 }
 
 @media (max-width: 1024px) {
+    .inner {
+        padding: 0 24px;
+    }
+
     .flex {
         flex-direction: column;
-        gap: 50px;
+        gap: 40px;
+    }
+
+    .imageSide {
+        width: 100%;
     }
 
     .imageWrapper {
