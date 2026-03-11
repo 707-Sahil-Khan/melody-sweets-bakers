@@ -11,7 +11,7 @@ export default function SavoryDelightsPage() {
     return (
         <ProductCategoryPage
             title="Savory Delights"
-            description="Crunchy bakarkhani, crispy biscuits and baked goods that pair perfectly with chai. Traditional recipes, baked to perfection."
+            description="Crunchy bakarkhani, crispy biscuits and baked goods that pair perfectly with chai."
             products={PRODUCTS}
             backHref="/"
         />
