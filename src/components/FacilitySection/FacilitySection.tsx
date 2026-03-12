@@ -20,7 +20,7 @@ export default function FacilitySection() {
                     <div className={styles.imageSide}>
                         <div className={styles.imageWrapper}>
                             <img
-                                src="/products/wahcantt.webp"
+                                src="/products/Wahcantt.webp"
                                 alt="Melody Facility"
                                 className={styles.img}
                             />
