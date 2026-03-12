@@ -4,39 +4,48 @@ import styles from "./MovingShowcase.module.css";
 
 const CARDS = [
     {
-        title: "Bento Series",
-        tag: "Artisan",
-        image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600"
+        title: "Artisan Cakes",
+        tag: "Cakes & Pastries",
+        image: "/products/chocolate-pastry.png"
     },
     {
-        title: "Heritage Mithai",
-        tag: "Traditional",
-        image: "https://images.unsplash.com/photo-1589119634718-69382218659d?auto=format&fit=crop&w=600"
-    },
-    {
-        title: "Fresh Harvest",
-        tag: "Bakery",
-        image: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=600"
-    },
-    {
-        title: "Savory Batch",
-        tag: "Snacks",
-        image: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600"
-    },
-    {
-        title: "Midnight Cocoa",
+        title: "Black Forest",
         tag: "Premium",
-        image: "https://images.unsplash.com/photo-1571115177098-24ec42ed2bb4?auto=format&fit=crop&w=600"
+        image: "/products/black-forest.png"
     },
     {
-        title: "Golden Crust",
-        tag: "Biscuits",
-        image: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600"
+        title: "Fresh Breads",
+        tag: "Bakery",
+        image: "/products/plain-small-slice.webp"
+    },
+    {
+        title: "Fruit Cake",
+        tag: "Traditional",
+        image: "/products/fruit-cake.png"
+    },
+    {
+        title: "Pineapple Pastry",
+        tag: "Pastry",
+        image: "/products/pineapple-pastry.png"
+    },
+    {
+        title: "Brownie",
+        tag: "Premium",
+        image: "/products/brownie.png"
+    },
+    {
+        title: "Milky Bread",
+        tag: "Bakery",
+        image: "/products/milky-small-slice.webp"
+    },
+    {
+        title: "Plain Cake",
+        tag: "Classic",
+        image: "/products/plain-cake.png"
     }
 ];
 
 export default function MovingShowcase() {
-    // Duplicate cards for seamless loop
     const displayCards = [...CARDS, ...CARDS];
 
     return (

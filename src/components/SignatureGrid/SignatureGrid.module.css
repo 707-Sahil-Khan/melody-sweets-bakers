@@ -1,6 +1,6 @@
 .section {
-    padding: 12rem 5%;
-    background: var(--antique-cream);
+    padding: 10rem 5%;
+    background: #f3e9d7;
 }
 
 .container {
@@ -9,13 +9,12 @@
 }
 
 .header {
-    margin-bottom: 8rem;
+    margin-bottom: 6rem;
     text-align: center;
 }
 
 .preTitle {
-    font-family: var(--font-inter);
-    color: var(--imperial-red);
+    color: #c8860a;
     text-transform: uppercase;
     letter-spacing: 0.4em;
     font-size: 0.75rem;
@@ -25,8 +24,11 @@
 }
 
 .sectionTitle {
+    font-family: Georgia, 'Times New Roman', serif;
     font-size: clamp(2.5rem, 5vw, 4.5rem);
-    color: var(--charcoal-obsidian);
+    color: #2c1a0e;
+    font-weight: 800;
+    letter-spacing: -0.02em;
 }
 
 .grid {
@@ -49,7 +51,9 @@
     width: 100%;
     aspect-ratio: 16/9;
     overflow: hidden;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
+    border-radius: 20px;
+    background: #ede3cf;
 }
 
 .image {
@@ -70,58 +74,60 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, transparent 60%, rgba(253, 252, 240, 0.3));
+    background: linear-gradient(to bottom, transparent 60%, rgba(243, 233, 215, 0.2));
+    border-radius: 20px;
 }
 
 .content {
     max-width: 500px;
+    padding: 0 8px;
 }
 
 .label {
-    font-family: var(--font-inter);
     font-size: 0.7rem;
-    color: var(--imperial-red);
+    color: #c8860a;
     text-transform: uppercase;
     letter-spacing: 0.25em;
     font-weight: 700;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     display: block;
 }
 
 .itemTitle {
-    font-size: 2.8rem;
-    color: var(--charcoal-obsidian);
-    margin-bottom: 1.5rem;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    color: #2c1a0e;
+    margin-bottom: 1rem;
     line-height: 1.1;
+    font-weight: 800;
 }
 
 .itemDesc {
-    font-size: 1.1rem;
-    color: var(--charcoal-obsidian);
-    opacity: 0.7;
-    margin-bottom: 2.5rem;
+    font-size: 1rem;
+    color: #7a5c3a;
+    margin-bottom: 2rem;
+    line-height: 1.7;
 }
 
 .explore {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
     width: fit-content;
 }
 
 .exploreText {
-    font-family: var(--font-inter);
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.3em;
     font-weight: 700;
-    color: var(--imperial-red);
+    color: #c8860a;
 }
 
 .exploreLine {
     width: 0;
-    height: 1px;
-    background: var(--imperial-red);
+    height: 1.5px;
+    background: #c8860a;
     transition: width 0.4s ease;
 }
 
@@ -129,10 +135,10 @@
     width: 100%;
 }
 
-/* Asymmetrical Spans */
+/* Asymmetrical Layout */
 @media (min-width: 968px) {
     .grid {
-        gap: 8rem 4rem;
+        gap: 6rem 4rem;
     }
 
     .item--1 {
@@ -141,12 +147,12 @@
 
     .item--2 {
         grid-column: 7 / span 6;
-        margin-top: 15rem;
+        margin-top: 12rem;
     }
 
     .item--3 {
         grid-column: 2 / span 6;
-        margin-top: -10rem;
+        margin-top: -8rem;
     }
 
     .item--2 .imageOverlay {

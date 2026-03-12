@@ -1,7 +1,7 @@
 .showcase {
     width: 100%;
     overflow: hidden;
-    background: var(--white);
+    background: #f3e9d7;
     padding: 60px 0;
     position: relative;
 }
@@ -19,19 +19,19 @@
 
 .showcase::before {
     left: 0;
-    background: linear-gradient(to right, var(--white) 0%, transparent 100%);
+    background: linear-gradient(to right, #f3e9d7 0%, transparent 100%);
 }
 
 .showcase::after {
     right: 0;
-    background: linear-gradient(to left, var(--white) 0%, transparent 100%);
+    background: linear-gradient(to left, #f3e9d7 0%, transparent 100%);
 }
 
 .track {
     display: flex;
     width: max-content;
     animation: scroll 40s linear infinite;
-    gap: 30px;
+    gap: 24px;
     padding: 0 15px;
 }
 
@@ -40,22 +40,26 @@
 }
 
 .card {
-    width: 350px;
-    background: var(--light-gray);
+    width: 320px;
+    background: #ede3cf;
+    border-radius: 20px;
+    overflow: hidden;
     position: relative;
     cursor: pointer;
     transition: transform 0.3s ease;
+    flex-shrink: 0;
 }
 
 .card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
 }
 
 .imageWrapper {
     width: 100%;
-    height: 450px;
+    height: 380px;
     overflow: hidden;
     position: relative;
+    background: #e4d8c0;
 }
 
 .img {
@@ -66,7 +70,7 @@
 }
 
 .card:hover .img {
-    transform: scale(1.1);
+    transform: scale(1.06);
 }
 
 .overlay {
@@ -75,35 +79,37 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.4) 100%);
+    background: linear-gradient(to bottom, transparent 50%, rgba(44, 26, 14, 0.25) 100%);
 }
 
 .content {
-    padding: 25px;
-    background: var(--white);
-    border: 1px solid var(--light-gray);
+    padding: 20px 22px 24px;
+    background: #ede3cf;
 }
 
 .tag {
-    font-size: 0.75rem;
-    font-weight: 800;
-    color: var(--power-red);
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #c8860a;
     text-transform: uppercase;
     letter-spacing: 0.15em;
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 6px;
 }
 
 .title {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: var(--black);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #2c1a0e;
+    line-height: 1.2;
 }
 
 .line {
     width: 40px;
-    height: 3px;
-    background: var(--power-red);
+    height: 2px;
+    background: #c8860a;
     transition: width 0.3s ease;
 }
 
@@ -117,17 +123,16 @@
     }
 
     100% {
-        /* Translate half the width of the displayCards track */
-        transform: translateX(calc(-50% - 15px));
+        transform: translateX(calc(-50% - 12px));
     }
 }
 
 @media (max-width: 768px) {
     .card {
-        width: 280px;
+        width: 260px;
     }
 
     .imageWrapper {
-        height: 350px;
+        height: 300px;
     }
 }

@@ -10,24 +10,24 @@ gsap.registerPlugin(ScrollTrigger);
 const COLLECTION_DATA = [
     {
         id: 1,
-        title: "The Bento Series",
-        desc: "Artistic mini-cakes crafted for intimate moments and delicate celebrations.",
-        image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=800",
-        label: "Collection One"
+        title: "Artisan Cakes",
+        desc: "From rich chocolate drips to classic fruit cakes — every slice is baked fresh daily with the finest ingredients.",
+        image: "/products/chocolate-pastry.png",
+        label: "Cakes & Pastries"
     },
     {
         id: 2,
-        title: "Heritage Sweets",
-        desc: "A tribute to local tradition, focusing on the rich textures of Badam Barfi and Sohan Halwa.",
-        image: "https://images.unsplash.com/photo-1591892425484-825edef16ab3?q=80&w=800",
-        label: "Collection Two"
+        title: "Traditional Sweets",
+        desc: "A tribute to local tradition — rich Sohan Halwa, silky Barfi, and syrup-soaked Gulab Jamun.",
+        image: "/products/fruit-cake.png",
+        label: "Heritage Mithai"
     },
     {
         id: 3,
-        title: "The Morning Batch",
-        desc: "Golden-brown perfection. Delicate Chicken Patties and buttery, crisp tea puffs.",
-        image: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=800",
-        label: "Collection Three"
+        title: "Fresh Bakery",
+        desc: "Golden-brown breads baked every morning. Soft milky loaves, crispy bakarkhani and buttery buns.",
+        image: "/products/plain-cake.png",
+        label: "Daily Bakes"
     }
 ];
 
